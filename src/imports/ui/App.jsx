@@ -22,7 +22,10 @@ export const App = () => (
         tasks.map(({ text }, index) => {
           console.log(text);
           return (
-            <li key={ `${index}-${text}` } className="App__tasks-list__li">
+            <li
+              key={ `${index}-${text}` }
+              className="App__tasks-list__li"
+            >
               { text }
             </li>
           )
