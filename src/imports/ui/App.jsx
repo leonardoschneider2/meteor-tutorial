@@ -11,9 +11,23 @@ const tasks = [
 ];
 
 export const App = () => (
-  <div>
-    <h1>Welcome to Meteor!</h1>
-    <Hello/>
-    <Info/>
+  <div className="App">
+    <h1 className="App__welcome">Welcome to Meteor!</h1>
+    {/* 
+      <Hello/>
+      <Info/>
+    */}
+    <ul className="App__tasks-list">
+      {
+        tasks.map(({ text }) => {
+          console.log(text);
+          return (
+            <li className="App__tasks-list__li">
+              { text }
+            </li>
+          )
+        })
+      }
+    </ul>
   </div>
 );
