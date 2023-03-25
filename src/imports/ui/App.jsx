@@ -19,10 +19,10 @@ export const App = () => (
     */}
     <ul className="App__tasks-list">
       {
-        tasks.map(({ text }) => {
+        tasks.map(({ text }, index) => {
           console.log(text);
           return (
-            <li className="App__tasks-list__li">
+            <li key={ `${index}-${text}` } className="App__tasks-list__li">
               { text }
             </li>
           )
