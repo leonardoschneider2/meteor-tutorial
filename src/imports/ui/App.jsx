@@ -1,6 +1,4 @@
 import React from 'react';
-import { Hello } from './Hello.jsx';
-import { Info } from './Info.jsx';
 
 /* Providing this tasks before make use in the DB */
 /* The tutorial man say that I can be creative with taks. I will put bakery tasks */
