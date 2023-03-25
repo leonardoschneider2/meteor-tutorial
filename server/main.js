@@ -1,9 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 import { TasksCollection } from '/imports/api/TasksCollection';
+import '/imports/api/TasksMethods';
 
-const insertTask = taskText => TasksCollection.insert({ text: taskText });
+const insertTask = taskText => TasksCollection.insert({ text: taskText, concluded: false });
 
-Meteor.startup(() => {
+Meteor.startup(async () => {
   if (TasksCollection.find().count() === 0) {
     [
       'First Task',
