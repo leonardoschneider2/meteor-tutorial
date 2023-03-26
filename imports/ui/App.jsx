@@ -8,11 +8,14 @@ export const App = () => {
   const tasks = useTracker(() => TasksCollection.find({}).fetch());
 
   return (
-    <div>
-      <h1>Welcome to Meteor!</h1>
+    <div className="App">
+      <div className="App__title-section">
+        <h1 className="App__title">Meteor Tutorial!</h1>
+        <h2 className="App__sub-title">You're welcome to learn with me.</h2>
+      </div>
 
-      <ul>
-        { tasks.map(task => <Task key={ task._id } task={ task.text }/>) }
+      <ul className="App__task-list">
+        { tasks.map(task => <Task key={ task._id } task={ task }/>) }
       </ul>
 
       <Form/>

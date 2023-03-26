@@ -14,10 +14,15 @@ Meteor.methods({
 
     TasksCollection.update(
       { _id: taskId }, 
-      { $set: { concluded: status } },
+      { $set: { concluded: !status } },
     );
   },
   'task.delete'(taskId) {
     check(taskId, String);
+
+    TasksCollection.remove({ _id: taskId });
   },
+  'task.dropDataBase'() {
+    TasksCollection.dropCollectionAsync();
+  }
 });
